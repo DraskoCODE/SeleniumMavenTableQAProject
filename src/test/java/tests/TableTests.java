@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.TablePage;
 
+import java.util.List;
+
 public class TableTests {
 
     @Test
@@ -17,7 +19,14 @@ public class TableTests {
         homePage.selectExample("Sortable Data Tables");
 
         TablePage tablePage = new TablePage(driver);
-        tablePage.getTableData();
+        List<List<String>> tableData = tablePage.getTableData();
+        for(int i = 0; i < tableData.size(); i++) {
+            List<String> tableRow = tableData.get(i);
+            int row = i + 1;
+            for(int j = 0; j < tableRow.size(); j++) {
+                System.out.println("Row " + row + " : " + tableRow.get(j));
+            }
+        }
 
         tablePage.close();
 

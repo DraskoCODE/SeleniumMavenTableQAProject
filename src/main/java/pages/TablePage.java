@@ -32,7 +32,7 @@ public class TablePage {
             List<WebElement> tDataCells = tRows.get(i).findElements(By.xpath(".//td"));
             List<String> tRow = new ArrayList<>();
             for(int j = 0; j < tDataCells.size(); j++) {
-                System.out.println(tDataCells.get(j).getText());
+                //System.out.println(tDataCells.get(j).getText());
                 tRow.add(tDataCells.get(j).getText());
             }
             tableData.add(tRow);
